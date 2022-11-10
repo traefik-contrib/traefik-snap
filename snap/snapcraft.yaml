@@ -52,6 +52,7 @@ parts:
     source-tag: "v2.9.4"
     build-packages:
       - npm
+      - python2
     build-snaps:
       - go
     build-environment:

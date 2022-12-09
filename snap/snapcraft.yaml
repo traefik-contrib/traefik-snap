@@ -49,7 +49,7 @@ parts:
     plugin: go
     source: https://github.com/traefik/traefik.git
     source-type: git
-    source-tag: "v2.9.4"
+    source-tag: "v2.9.6"
     build-packages:
       - npm
       - python2

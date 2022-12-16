@@ -34,7 +34,7 @@ plugs:
     write:
       - /run/docker.sock
       - /var/run/docker.sock
-  config:
+  etc-traefik:
     interface: system-files
     read:
       - /etc/traefik
@@ -52,7 +52,7 @@ apps:
       - network-bind
       - docker
       - docker-sys
-      - config
+      - etc-traefik
 
 parts:
   traefik:

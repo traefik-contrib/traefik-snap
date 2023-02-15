@@ -29,11 +29,11 @@ architectures:
     build-for: s390x
 
 plugs:
-  docker-sys:
-    interface: system-files
-    write:
-      - /run/docker.sock
-      - /var/run/docker.sock
+  #docker-sys:
+  #  interface: system-files
+  #  write:
+  #    - /run/docker.sock
+  #    - /var/run/docker.sock
   etc-traefik:
     interface: system-files
     read:
@@ -50,9 +50,9 @@ apps:
     plugs:
       - network
       - network-bind
-      - docker
-      - docker-sys
       - etc-traefik
+      - docker
+      #- docker-sys
 
 parts:
   traefik:

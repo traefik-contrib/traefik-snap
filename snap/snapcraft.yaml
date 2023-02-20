@@ -29,22 +29,22 @@ architectures:
     build-for: s390x
 
 plugs:
+  etc-traefik:
+    interface: system-files
+    read:
+      - /etc/traefik
   #docker-sys:
   #  interface: system-files
   #  write:
   #    - /run/docker.sock
   #    - /var/run/docker.sock
-  etc-traefik:
-    interface: system-files
-    read:
-      - /etc/traefik
 
 environment:
   XDG_CONFIG_HOME: $SNAP_COMMON
 
 apps:
   traefik:
-    command: /bin/traefik
+    command: bin/traefik
     daemon: simple
     restart-condition: always
     plugs:

@@ -59,7 +59,7 @@ parts:
     plugin: go
     source: https://github.com/traefik/traefik.git
     source-type: git
-    source-tag: "v3.0.0-beta2"
+    source-tag: "v3.0.0-beta3"
     build-packages:
       - npm
       - python2

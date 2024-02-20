@@ -83,7 +83,7 @@ parts:
       cd $CRAFT_PART_BUILD
       GRADE=`craftctl get grade`
       if [ $GRADE = 'stable' ]; then
-        export VERSION=v`craftctl get version`
+        export VERSION=`craftctl get version`
       fi
       make FLAGS="-p $CRAFT_PARALLEL_BUILD_COUNT"
       mkdir -p $CRAFT_PART_INSTALL/bin

@@ -62,7 +62,7 @@ parts:
     source-tag: "v3.0.0-rc5"
     build-snaps:
       - go/1.22/candidate
-      - node/21/stable
+      - node/20/stable
     build-environment:
       - GO111MODULE: 'on'
     override-pull: |

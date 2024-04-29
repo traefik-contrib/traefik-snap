@@ -16,17 +16,14 @@ description: |
   if docker is installed other way than snap.
 
 confinement: strict
-base: core22
+base: core24
 
-architectures:
-  - build-on: amd64
-    build-for: amd64
-  - build-on: arm64
-    build-for: arm64
-  - build-on: arm64
-    build-for: armhf
-  - build-on: s390x
-    build-for: s390x
+platforms:
+  s390x:
+  amd64:
+  arm64:
+  armhf:
+    build-on: arm64
 
 plugs:
   etc-traefik:

@@ -19,11 +19,11 @@ confinement: strict
 base: core24
 
 platforms:
-  s390x:
   amd64:
   arm64:
   armhf:
-    build-on: arm64
+  ppc64el:
+  s390x:
 
 plugs:
   etc-traefik:

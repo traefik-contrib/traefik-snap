@@ -56,7 +56,7 @@ parts:
     plugin: go
     source: https://github.com/traefik/traefik.git
     source-type: git
-    source-tag: "v3.1.1"
+    source-tag: "v3.1.2"
     build-snaps:
       - go/1.22/stable
       - node/20/stable

@@ -58,7 +58,7 @@ parts:
     source-type: git
     source-tag: "v3.2.0-rc2"
     build-snaps:
-      - go/1.22/candidate
+      - go/1.23/candidate
       - node/20/stable
     build-environment:
       - GO111MODULE: 'on'

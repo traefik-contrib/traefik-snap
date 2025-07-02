@@ -58,8 +58,8 @@ parts:
     source-type: git
     source-tag: "v3.5.0-rc1"
     build-snaps:
-      - go/1.23/candidate
-      - node/20/stable
+      - go/1.24/candidate
+      - node/22/stable
     build-environment:
       - GO111MODULE: 'on'
     override-pull: |

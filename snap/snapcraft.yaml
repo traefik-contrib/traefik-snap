@@ -79,14 +79,6 @@ parts:
       npm install -g corepack
       corepack enable
       yarn install
-      case ${CRAFT_ARCH_BUILD_ON} in
-        ppc64el*)
-          yarn add sass-embedded-linux-ppc64
-          ;;
-        s390x)
-          yarn add sass-embedded-linux-s390x
-          ;;
-      esac
       yarn build
       cd $CRAFT_PART_BUILD
       GRADE=`craftctl get grade`

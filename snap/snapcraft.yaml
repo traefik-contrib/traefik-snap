@@ -75,8 +75,8 @@ parts:
     override-build: |
       make clean-webui
       cd $CRAFT_PART_BUILD/webui
-      npm uninstall -g yarn pnpm
       npm install -g corepack
+      PATH="/usr/local/bin:$(echo $PATH | sed 's#:/usr/local/bin##g')"
       corepack enable
       yarn install
       yarn build

@@ -80,10 +80,10 @@ parts:
       PATH="/usr/local/bin:$(echo $PATH | sed 's#:/usr/local/bin##g')"
       corepack enable
       if [ -n "$http_proxy" ]
-      then yarn config set proxy $http_proxy
+      then yarn config set httpProxy $http_proxy
       fi
       if [ -n "$https_proxy" ]
-      then yarn config set https-proxy $https_proxy
+      then yarn config set httpsProxy $https_proxy
       fi
       yarn install
       yarn build

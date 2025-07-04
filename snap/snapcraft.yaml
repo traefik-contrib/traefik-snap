@@ -79,14 +79,13 @@ parts:
       npm install -g corepack
       PATH="/usr/local/bin:$(echo $PATH | sed 's#:/usr/local/bin##g')"
       corepack enable
-      if [ -n "$http_proxy" ] && [ -n "$https_proxy" ]
-      then yarn install --proxy $http_proxy --https-proxy $https_proxy
-      elif [ -n "$http_proxy" ]
-      then yarn install --proxy $http_proxy
-      elif [ -n "$https_proxy" ]
-      then yarn install --https-proxy $https_proxy
-      else yarn install
+      if [ -n "$http_proxy" ]
+      then yarn config set proxy $http_proxy
       fi
+      if [ -n "$https_proxy" ]
+      then yarn config set https-proxy $https_proxy
+      fi
+      yarn install
       yarn build
       cd $CRAFT_PART_BUILD
       GRADE=`craftctl get grade`

@@ -16,7 +16,7 @@ description: |
   if docker is installed other way than snap.
 
 confinement: strict
-base: core24
+base: core26
 
 platforms:
   amd64:

@@ -78,11 +78,13 @@ parts:
       cd $CRAFT_PART_BUILD/webui
       npm install -g corepack
       PATH="/usr/local/bin:$(echo $PATH | sed 's#:/usr/local/bin##g')"
-      if [ -n "${http_proxy:-}" ]
-      then yarn config set proxy $http_proxy
+      if [ -n "${http_proxy:-}" ]; then
+        yarn config set proxy $http_proxy
+        yarn config set httpProxy $http_proxy
       fi
-      if [ -n "${https_proxy:-}" ]
-      then yarn config set https-proxy $https_proxy
+      if [ -n "${https_proxy:-}" ]; then
+        yarn config set https-proxy $https_proxy
+        yarn config set httpsProxy $https_proxy
       fi
       corepack enable
       yarn install

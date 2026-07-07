@@ -74,9 +74,6 @@ parts:
         craftctl set grade='stable'
       fi
     override-build: |
-      make clean-webui
-      cd $CRAFT_PART_BUILD/webui
-      PATH="/usr/local/bin:$(echo $PATH | sed 's#:/usr/local/bin##g')"
       if [ -n "${http_proxy:-}" ]; then
         yarn config set proxy $http_proxy
         yarn config set httpProxy $http_proxy
@@ -85,8 +82,11 @@ parts:
         yarn config set https-proxy $https_proxy
         yarn config set httpsProxy $https_proxy
       fi
+      make clean-webui
+      cd $CRAFT_PART_BUILD/webui
       npm install -g corepack
       corepack enable
+      PATH="/usr/local/bin:$(echo $PATH | sed 's#:/usr/local/bin##g')"
       yarn install
       yarn build
       cd $CRAFT_PART_BUILD

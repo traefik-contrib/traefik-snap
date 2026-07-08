@@ -63,6 +63,7 @@ parts:
     build-environment:
       - GO111MODULE: 'on'
       - COREPACK_ENABLE_DOWNLOAD_PROMPT: '0'
+      - NODE_USE_ENV_PROXY: '1'
     override-pull: |
       craftctl default
       VERSION=`git tag --points-at HEAD`
